@@ -15,3 +15,5 @@ game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, "ph_g
 game.state.add("StateMain", StateMain);
 game.state.add("StateTitle", StateTitle);
 game.state.start("StateTitle");
+
+}
