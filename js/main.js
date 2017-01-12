@@ -1,19 +1,20 @@
-isMobile=navigator.userAgent.indexOf("Mobile");
-console.log("isMobile="+isMobile);
+var game;
+window.onload = function()
+{
+	 var isMobile=navigator.userAgent.indexOf("Mobile");
 
-if (isMobile==-1) {
-//desktop laptop
+   if (isMobile==-1)
+    {
+        game=new Phaser.Game(480,640,Phaser.AUTO,"ph_game");
+    }
+    else
+    {       
+      game=new Phaser.Game(window.innerWidth,window.innerHeight,Phaser.AUTO,"ph_game");  
+      console.log("Mobile");
+    }
 
-game = new Phaser.Game(480, 640, Phaser.AUTO, "ph_game");
-} else {
-//mobile device
-game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, "ph_game");
-}
 
-//test this with the new code first, then if it crashes and burns use old code
-
-game.state.add("StateMain", StateMain);
-game.state.add("StateTitle", StateTitle);
-game.state.start("StateTitle");
-
+    game.state.add("StateTitle",StateTitle);
+    game.state.add("StateMain",StateMain);
+    game.state.start("StateTitle");
 }
