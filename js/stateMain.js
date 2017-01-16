@@ -8,7 +8,7 @@ var StateMain={
     
     create:function()
     {
-    	//objects, variables, functions
+    	console.log("ready!");
         
     },
     
