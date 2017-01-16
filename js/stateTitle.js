@@ -3,7 +3,10 @@ var StateTitle={
    preload:function()
     {
        game.load.image("logo","images/aminalogo.png");
+       game.load.spritesheet('buttons', 'images/ui/buttons.png', 265, 75, 8);
+       if (screen.width < 1500) {
         game.scale.forceOrientation(false, true);
+        }
     },
     
     create:function()
@@ -15,9 +18,10 @@ var StateTitle={
 
     setListeners:function()
     {
-        game.scale.enterIncorrectOrientation.add(this.wrongWay,this);
-            game.scale.leaveIncorrectOrientation.add(this.rightWay, this);
-
+          if (screen.width < 1500) {
+                game.scale.enterIncorrectOrientation.add(this.wrongWay,this);
+                game.scale.leaveIncorrectOrientation.add(this.rightWay, this);
+        }
     },
     
     wrongWay:function()
