@@ -41,3 +41,5 @@ var StateTitle = {
     , update: function () {
 
     }
+
+}

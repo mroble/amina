@@ -14,7 +14,8 @@ window.onload = function()
     }
 
 
-    game.state.add("StateTitle",StateTitle);
-    game.state.add("StateMain",StateMain);
+    game.state.add("StateTitle", StateTitle);
+    game.state.add("StateMain", StateMain);
     game.state.start("StateTitle");
+    
 }
